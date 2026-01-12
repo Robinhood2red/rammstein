@@ -33,7 +33,7 @@ body {
 }
 
 .logo {
-    width: 15em;
+    width: 10em;
     border: 5px solid var(--darkgold);
     border-radius: 5px;
     background-color: antiquewhite;
@@ -162,8 +162,8 @@ h2 {
 
 .blanc, .bleue, .violet, .rouge, .vert, .pourpre, .jaune, .orange, .turquoise {
     border: 5px solid black;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     background-image: url('images/mig.jpg');
     background-size: cover;
     background-position: center;
@@ -288,5 +288,19 @@ h2 {
   55%{
     left: -100%;
   }
+}
+
+
+    /*          PARTIE CONTACT        */
+
+.rammstein-form {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgb(32, 32, 32);
+    border-radius: 8px;
+    text-align: left;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
