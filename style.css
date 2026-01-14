@@ -422,11 +422,22 @@ h2 {
     margin-top: 10px;
 }
 .checkbox {
-    /* display: flex;
-    align-items: flex-start;
-    flex-direction: column*/
-    width: 90%
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%
 } 
+.envoyer {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.submit {
+    padding: 5px;
+    margin-top: 10px;
+}
 
 /*-----------------------------MEDIA QUERY---------------------------------*/
 /*On peut ecrire min-width ou max-width personnellement je prefere le max*/
@@ -470,4 +481,51 @@ h2 {
     .vidéo {
         width: 100%;
     }
+    .rammstein-form {
+        margin-bottom: 20px;
+    }
+    .rammstein-lecture {
+    margin-top: 200px;
+    }
+}
+
+
+footer {
+    background-color: black; /*Couleur fond footer*/
+    padding: 30px 0 10px 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-socials {
+    display: flex;
+    grid-gap: 40px;
+}
+/*Transformation : grossissement (scale)*/
+.groslogo {
+    color: blueviolet;
+    display: inline-block;
+}
+    /*Important pour le transform*/
+.groslogo:hover {
+    transform: scale(1.7);
+}
+
+.footer-bottom {
+    background-color: rgb(31, 31, 31);
+    border-top: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
 }
