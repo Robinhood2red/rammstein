@@ -10,6 +10,7 @@ a{
 
 :root {
     --darkgold: rgb(163, 121, 15);
+    --a-hover: goldenrod;
     --stylePrimary: display: flex, justify-content: center;
 }
 
@@ -49,27 +50,43 @@ a:active {color: gold;}
     justify-content: end;
 }
 ul li {
-    padding: 40px;
+    padding: 20px;
     list-style-type: none;
 }
 
 /*-----------------------------MENU BURGER--------------------------------*/
 
 .menu-burger {
-    display: none; 
+    display: none;
 }
-
+.menu-burger {
+    width: 100%;
+    height: 100%;
+}
+nav {
+    height: 50px;
+}
+.menu-burger::before, .menu-burger::after {
+    content: "";
+    width: 100%;
+    height: 50%;
+    background-color: #046a80;
+}
+.menu-burger nav {
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
 .navigation {
     border-radius: 8px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-    background-color: #FFF;
+    background-color: whitesmoke;
     padding: 5px;
     line-height: 3;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .menu-burger ul {
     display: flex;
     justify-content: space-between;
@@ -78,22 +95,18 @@ ul li {
     overflow: hidden;
     transition: .4s cubic-bezier(.77,0,.18,1);
 }
-
 .menu-burger.active ul {
     width: 420px;
     margin-right: 20px;
 }
-
 a {
     color: #888;
     text-decoration: none;
     transition: .3s;
 }
-
 a:hover {
-    color: #3c9dfb;
+    color: var(--a-hover);
 }
-
 .basculant {
     position: relative;
     display: inline-block;
@@ -102,25 +115,21 @@ a:hover {
     padding: 14px 5px;
     cursor: pointer;
 }
-
 .menu-burger:not(.active) .nav-toogler{
     margin-left: -10px;
 }
-
 .basculant::before, .basculant::after {
     content: "";
     position: relative;
     display: block;
     width: 30px;
     height: 3px;
-    background-color: #3c9dfb;
+    background-color: var(--darkgold);
     transition: .4s cubic-bezier(.77,0,.18,1);
 }
-
 .basculant::after {
     margin-top: 10px;
 }
-
 .menuBurger.active .basculant::before, .menuBurger.active .basculant::after{
     position: absolute;
     top: 50%;
@@ -134,7 +143,6 @@ a:hover {
 On va priviliégier des tailles relatives plutoit  que fixes pour le responsive
 donc les % et vh, vw, rem et em plutot que px
 */
-
 /*-------------------FIN MENU BURGER---------------------*/
 
 .images1 {
@@ -143,7 +151,6 @@ donc les % et vh, vw, rem et em plutot que px
     margin-top: 80px;
     gap: 500px;
 }
-
 .imgsection1 {
     width: 500px;
     border-radius: 20px;
@@ -169,9 +176,11 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
 h2 {
     color: antiquewhite;
 }
+
 .vidéo2 {
     display: flex;
     justify-content: center;
@@ -183,7 +192,7 @@ h2 {
 }
 
 .rammstein-box {
-    max-width: 700px;
+    max-width: 650px;
     margin: 0 auto;
     padding: 20px;
     background: whitesmoke;
@@ -235,7 +244,7 @@ h2 {
 .toggle-desc:checked ~ .description-box {/*toggle-desc:checked == Si à été coché -- Le tild ~ 
     cible un élément, à condition qu'ils partagent le même parent (ils sont frères),
     même s'il y a d'autres balises entre les deux, différent du + qui cible uniquement le frère immédiat*/
-    max-height: 500px;
+    max-height: 837px;
     padding: 15px;
 }
 
@@ -418,3 +427,47 @@ h2 {
     flex-direction: column*/
     width: 90%
 } 
+
+/*-----------------------------MEDIA QUERY---------------------------------*/
+/*On peut ecrire min-width ou max-width personnellement je prefere le max*/
+  /*EXEMPLE*/
+  /*Sur les écrans, quand la largeur de la fenêtre fait au maximum 1280px 
+        @media screen and (max-width: 1280px)
+    Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 1024px et 1280px 
+        @media all and (min-width: 1024px) and (max-width: 1280px)
+    Sur tous types d'écrans orientés verticalement 
+        @media all and (orientation: portrait)
+        REGARDER le overflow : scroll ,pour un texte qui dépasse de sa boite parent*/
+@media screen and (max-width: 800px) {
+    .header1 {
+        display: none;
+    }
+    .menu-burger {
+        display: block;
+    }
+    .images1 {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 200px;
+    gap: 20%;
+    }
+    .imgsection1 {
+    width: 30%;
+    height: 30%;
+    border-radius: 20px;
+    transform: scaleX(-1);
+    box-shadow: 5px 10px 50px rgba(178, 34, 34, 0.164);
+    }
+    .imgsection2 {
+    width: 30%;
+    height: 30%;
+    border-radius: 20px;
+    box-shadow: 5px 10px 50px rgba(178, 34, 34, 0.164);
+    }
+    .txtbox {
+    font-size: 23px;
+    }
+    .vidéo {
+        width: 100%;
+    }
+}
