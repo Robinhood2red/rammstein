@@ -143,26 +143,8 @@ a:hover {
 On va priviliégier des tailles relatives plutoit  que fixes pour le responsive
 donc les % et vh, vw, rem et em plutot que px
 */
+
 /*-------------------FIN MENU BURGER---------------------*/
-
-.images1 {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 80px;
-    gap: 500px;
-}
-.imgsection1 {
-    width: 500px;
-    border-radius: 20px;
-    transform: scaleX(-1);
-    box-shadow: 5px 10px 50px rgba(178, 34, 34, 0.164);
-}
-.imgsection2 {
-    width: 500px;
-    border-radius: 20px;
-    box-shadow: 5px 10px 50px rgba(178, 34, 34, 0.164);
-}
-
 h1 {
     color: antiquewhite;
     font-family: fantasy;
@@ -172,137 +154,11 @@ h1 {
     width: 100%;
 }
 
-.vidéo {
-    display: flex;
-    justify-content: center;
-}
-
 h2 {
     color: antiquewhite;
 }
 
-.vidéo2 {
-    display: flex;
-    justify-content: center;
-    padding: 0 0 100px 0;
-}
-
-.rammsteinparis {
-    width: 600px;
-}
-
-.rammstein-box {
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 20px;
-    background: whitesmoke;
-    border-radius: 8px;
-    text-align: center;
-    margin-bottom: 100px;
-}
-
-.section img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-.txt-sonne {
-    font-size: 25px;
-    color: var(--darkgold);
-}
-
-.toggle-desc {
-    display: none;
-}
-
-.arrow-container {
-    margin: 15px 0;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.arrow-down {
-    font-size: 30px;
-    display: inline-block;
-    transition: transform 0.3s;
-}
-
-.description-box {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0,3 ease-out;
-    background: rgb(212, 212, 212);
-    border-radius: 5px;
-    padding: 0 15px;
-    margin: 10px 0;
-}
-
-.txtbox {
-    color: black;
-}
-
-.toggle-desc:checked ~ .description-box {/*toggle-desc:checked == Si à été coché -- Le tild ~ 
-    cible un élément, à condition qu'ils partagent le même parent (ils sont frères),
-    même s'il y a d'autres balises entre les deux, différent du + qui cible uniquement le frère immédiat*/
-    max-height: 837px;
-    padding: 15px;
-}
-
-.toggle-desc:checked ~ .arrow-container .arrow-down {
-    transform: rotate(180deg);
-    transform: scale(1.5); /*Agrandit la flèche et le texte*/
-}
-
-.blanc, .bleue, .violet, .rouge, .vert, .pourpre, .jaune, .orange, .turquoise {
-    border: 5px solid black;
-    width: 200px;
-    height: 200px;
-    background-image: url('images/mig.jpg');
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
-    filter: contrast(1.3) brightness(1.2);
-}
-
-.blanc {
-    background-color: #f5e6d3;
-}
-.bleue {
-    background-color: #4a9fd8;
-}
-.violet {
-    background-color: #9b59b6;
-}
-.pourpre {
-    background-color: #e74c8c;
-}
-.rouge {
-    background-color: #e74c3c;
-}
-.vert {
-    background-color: #27ae60;
-}
-.jaune {
-    background-color: #f1c40f;
-}
-.orange {
-    background-color: #e67e22;
-}
-.turquoise {
-    background-color: #1abc9c;
-}
-
-.section1 {
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-
-.cadre {
-    display: flex;
-    justify-content: center;
-}
-
-/*Scroll bar*/
+/*----------------------------Scroll bar-----------------------------*/
 #info
 {
 	font-size: 18px;
@@ -343,45 +199,63 @@ h2 {
 											  var(--darkgold) 75%,
 											  transparent)
 }
+/*--------------------------Fin Scroll bar----------------------------*/
 
+/*--------------------------PARTIE CONTACT----------------------------*/
 
-.menu{
-  background-color: #262424;
-  padding: 10px;
-  display: contents;
-  width: 50px;
+.rammstein-lecture {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgb(32, 32, 32);
+    border-radius: 8px;
+    text-align: left;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
-.caroussel{
-  overflow: hidden;
+.rammstein-form {
+    color: antiquewhite;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgb(32, 32, 32);
+    border-radius: 8px;
+    text-align: left;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
-
-.caroussel figure{
-  display: flex;
-  justify-content: flex-start; 
-  position: relative;
-	width: 300%; 
-	margin: 0;
-	left: 0;
-  animation: 9s slideCaroussel infinite;
+.form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
 }
-
-.caroussel figure img{
-  width: 20%;
-  float: right;
+.inputform {
+    padding: 5px;
+    margin-top: 10px;
 }
-
-@keyframes slideCaroussel {
-  0% {
-		left: 0;
-	}
-  45%{
-    left: -100%;
-  }
-  55%{
-    left: -100%;
-  }
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%
+} 
+.envoyer {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+.submit {
+    padding: 5px;
+    margin-top: 10px;
+}
+/*--------------------------FIN PARTIE CONTACT----------------------------*/
 
 /*-----------------------------MEDIA QUERY---------------------------------*/
 /*On peut ecrire min-width ou max-width personnellement je prefere le max*/
@@ -433,7 +307,7 @@ h2 {
     }
 }
 
-
+/*--------------------------FOOTER----------------------------*/
 footer {
     background-color: black; /*Couleur fond footer*/
     padding: 30px 0 10px 0;
@@ -473,3 +347,4 @@ footer {
     display: flex;
     justify-content: center;
 }
+/*--------------------------FIN FOOTER----------------------------*/
