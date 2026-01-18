@@ -149,7 +149,7 @@ donc les % et vh, vw, rem et em plutot que px
     display: flex;
     justify-content: space-evenly;
     margin-top: 80px;
-    gap: 500px;
+    gap: 20%;
 }
 .imgsection1 {
     width: 500px;
