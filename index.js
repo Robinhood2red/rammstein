@@ -42,3 +42,12 @@ document.querySelector('.anchor').addEventListener('click', function(e) {
   }
 });
 // // FIN ANIMATION RETOUR HAUT DE PAGE !CLAUDE!
+
+let userinput = prompt('Bienvenue');
+if (userinput === 'Bonjour'){
+  alert('Bonjour, bienvenue !');
+}else if (userinput === 'Tu va bien ?'){
+  alert('Bien et toi ?');
+}else {
+  alert("Désolé, je n'ai pas compris");
+}
