@@ -62,29 +62,31 @@ document.querySelector('.anchor').addEventListener('click', function(e) {
 
 // chatBot();
 
-function chatBot() {
+// function chatBot() {
 
-  let userPrint = prompt('Bonjour, avez-vous faim ?');
-  if (userPrint === 'non'){
-    alert('Personne suivante svp !')
-  }else if(userPrint === 'oui'){
-    let userInputMenu = prompt('Bien, que puis-je vous servir ? Menu végé ou Menu viandard');
-      if (userInputMenu === 'Menu végé'){
-        let userInputMenuVégé = prompt('Salade Greque ou Soupe aux carottes');
-          if (userInputMenuVégé === ('Salade Greque')){
-            alert('Compris, nous vous apporton cela dans 10mn')
-          }else if(userInputMenuVégé == ('Soupe aux carottes')){
-            alert('Trés bien, nous vous apportont tout cela dans 10mn')}
-      }else if(userInputMenu === 'Menu viandard'){
-        let userInputMenuViandard = prompt('Langue de boeuf ou Foie de veau');
-          if (userInputMenuViandard === ('Langue de boeuf')){
-            alert('Trés bon choix, nous vous apporton cela dans 10mn')
-          }else if(userInputMenuViandard === ('Foie de veau')){
-            alert('Entendu, nous vous ampprtont tout cela dans 10mn')
-          }
-  } 
-  }else {
-    alert("Désolé, je n'ai pas compris");
-}
-}
-chatBot();
+//   let userPrint = prompt('Bonjour, avez-vous faim ?');
+//   if (userPrint === 'non'){
+//     alert('Personne suivante svp !')
+//   }else if(userPrint === 'oui'){
+//     let userInputMenu = prompt('Bien, que puis-je vous servir ? Menu végé ou Menu viandard');
+//       if (userInputMenu === 'Menu végé'){
+//         let userInputMenuVégé = prompt('Salade Greque ou Soupe aux carottes');
+//           if (userInputMenuVégé === ('Salade Greque')){
+//             alert('Compris, nous vous apporton cela dans 10mn')
+//           }else if(userInputMenuVégé == ('Soupe aux carottes')){
+//             alert('Trés bien, nous vous apportont tout cela dans 10mn')}
+//       }else if(userInputMenu === 'Menu viandard'){
+//         let userInputMenuViandard = prompt('Langue de boeuf ou Foie de veau');
+//           if (userInputMenuViandard === ('Langue de boeuf')){
+//             alert('Trés bon choix, nous vous apporton cela dans 10mn')
+//           }else if(userInputMenuViandard === ('Foie de veau')){
+//             alert('Entendu, nous vous ampprtont tout cela dans 10mn')
+//           }
+//   } 
+//   }else {
+//     alert("Désolé, je n'ai pas compris");
+// }
+// }
+// chatBot();
+
+

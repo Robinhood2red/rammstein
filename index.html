@@ -8,6 +8,41 @@
     <link rel="icon" type=image/svg href="images/icon.svg">
 </head>
 
+<script> // BALISE SCRIPT JS
+        // for ( let i = 1; i <= 199; i++ ) {
+
+          //if (i % 3 === 0 && i %5 === 0){
+          //console.log('FizzBuzz');
+          //} else if (i % 3 === 0 ){
+          //console.log('Fizz');
+          //}
+          //else if (i % 5 === 0){
+          //console.log('Buzz');
+          //}
+          //else {
+            //console.log( i );
+          //}
+        //}
+
+        //JEU DU NOMBRE
+        let secretNumber = Math.floor(Math.random() * 100)
+        console.log ('le nombre secret est :', secretNumber);
+
+        for (let i = 0; i < 10; i++){
+          let guess = prompt('Tentative ${i + 1}/10 - entrez un nombre entre 1 et 100:');
+        
+          if (secretNumber == guess){
+          alert('Gagné ! Bravo !!');
+          } else if (secretNumber > guess){
+          alert('Trop bas !');
+          } else if (secretNumber < guess){
+          alert('Trop haut !');
+          } else {
+          alert("Merci d'entrer un nombre") 
+          }
+        }
+</script>
+
 <body class="scrollbar" id="style-10">
 
     <header>
