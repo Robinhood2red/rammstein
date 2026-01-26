@@ -67,8 +67,8 @@ function chatBot() {
   let userPrint = prompt('Bonjour, avez-vous faim ?');
   if (userPrint === 'non'){
     alert('Personne suivante svp !')
-  }else if(userPrint === 'oui'){{
-    }let userInputMenu = prompt('Bien, que puis-je vous servir ? Menu végé ou Menu viandard');
+  }else if(userPrint === 'oui'){
+    let userInputMenu = prompt('Bien, que puis-je vous servir ? Menu végé ou Menu viandard');
       if (userInputMenu === 'Menu végé'){
         let userInputMenuVégé = prompt('Salade Greque ou Soupe aux carottes');
           if (userInputMenuVégé === ('Salade Greque')){
@@ -83,7 +83,8 @@ function chatBot() {
             alert('Entendu, nous vous ampprtont tout cela dans 10mn')
           }
   } 
+  }else {
+    alert("Désolé, je n'ai pas compris");
 }
-alert("Désolé, je n'ai pas compris");
 }
 chatBot();
