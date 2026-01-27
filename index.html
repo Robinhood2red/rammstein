@@ -9,7 +9,7 @@
 </head>
 
 <script> // BALISE SCRIPT JS
-        // for ( let i = 1; i <= 199; i++ ) {
+        //for ( let i = 1; i <= 199; i++ ) {
 
           //if (i % 3 === 0 && i %5 === 0){
           //console.log('FizzBuzz');
@@ -25,22 +25,123 @@
         //}
 
         //JEU DU NOMBRE
-        let secretNumber = Math.floor(Math.random() * 100)
-        console.log ('le nombre secret est :', secretNumber);
+        //let secretNumber = Math.floor(Math.random() * 100)
+        //console.log ('le nombre secret est :', secretNumber);
 
-        for (let i = 0; i < 10; i++){
-          let guess = prompt('Tentative ${i + 1}/10 - entrez un nombre entre 1 et 100:');
+        //for (let i = 0; i < 10; i++){
+          //let guess = prompt('Tentative ${i + 1}/10 - entrez un nombre entre 1 et 100:');
         
-          if (secretNumber == guess){
-          alert('Gagné ! Bravo !!');
-          } else if (secretNumber > guess){
-          alert('Trop bas !');
-          } else if (secretNumber < guess){
-          alert('Trop haut !');
+          //if (secretNumber == guess){
+          //alert('Gagné ! Bravo !!');
+          //} else if (secretNumber > guess){
+          //alert('Trop bas !');
+          //} else if (secretNumber < guess){
+          //alert('Trop haut !');
+          //} else {
+          //alert("Merci d'entrer un nombre") 
+          //}
+        //}
+
+        //function multiplierParDeux(nombre) { //multiplierParDeux = fonction choisie (nom variable) nombre = paramètre (nom variable)
+        //return nombre * 2;
+        //}
+        //multiplierParDeux(5)
+
+        //function diviserParDeux(nombre) {
+        //  return nombre / 2;
+        //}
+        //var n = Math.random(); 
+        //diviserParDeux(n);
+
+        // function amount(number, number2) {
+        //   return number + number2;
+        // }
+        // var n = Math.random();
+        // amount(n, 1);
+
+        // function signe(number) {
+        //   if (number < 0 ) {
+        //     return 'négatif';
+        //   }
+        //   else if (number === 0) {
+        //     return 'null';
+        //   }
+        //   else if (number > 0) {
+        //     return 'positif';
+        //   }
+        // }
+        // signe(Math.random());
+
+        // function factorial(number) {
+        //   let résultat = 1;
+        //   for (let i = 1; i <= number; i++) {
+        //     résultat *= i;
+        //     console.log (résultat);
+        //   }
+        //   return résultat;
+        // }
+        // factorial(5)
+        
+        // let chiFouMi = ("Pierre", "Feuille", "Ciseaux");
+        // let randomChiFouMi = Math.floor(Math.random() * chiFouMi.length);
+        // console.log ('le random à choisir:', randomChiFouMi);
+        // let computerSelection = chiFouMi(randomChiFouMi);
+
+        // let playerChoice = prompt("Choisisez Pierre, Feuille ou Ciseaux")
+
+        // if (playerChoice === computerSelection) {
+        //   alert('Egalité')
+        // } else if (
+        //   (playerChoice === 'Pierre' && computerSelection === 'Ciseaux') ||
+        //   (playerChoice === 'Feuille' && computerSelection === 'Pierre') ||
+        //   (playerChoice === 'Ciseaux' && computerSelection === 'Feuille')
+        // ) {
+        //   alert ('Gagner!')
+        // } else {
+        //   alert('Perdu !')
+
+        function comparer(player, computer) {
+          if (player === computer) {
+            return "Egalité"
+          }
+            if (
+            (player === 'Pierre' && computer === 'Ciseaux') ||
+            (player === 'Feuille' && computer === 'Pierre') ||
+            (player === 'Ciseaux' && computer === 'Feuille')
+          ) {
+            console.log ('Gagné');
           } else {
-          alert("Merci d'entrer un nombre") 
+            console.log ('Perdu');
           }
         }
+       
+
+      function jeu() {
+        let scorePlayer = 0;
+        let scoreComputer = 0;
+        //boucle pour 3 manches
+        for (let i = 0; i < 3; i++) { 
+          // / ? = if / : = if else
+          let randomChoice = Math.random() < 0.33 ? "Pierre" : Math.random() < 0.5 ? "Feuille" : "Ciseaux"; 
+          let playerChoice = prompt("Choisisez Pierre, Feuille ou Ciseaux");
+          let scoreManche = comparer(randomChoice, playerChoice);
+          console.log(scoreManche);
+
+          if (scoreManche = 'Gagné'){
+            scorePlayer++
+          } else {
+            scoreComputer++
+          }
+        }
+        if (scorePlayer > scoreComputer) {
+          console.log("Je suis trop fort")
+        } else if(scorePlayer < scoreComputer) {
+          console.log('Je suis une merde')
+        } else {
+          console.log("Je suis aussi fort qu'une machine")
+        }
+      }
+      jeu();
 </script>
 
 <body class="scrollbar" id="style-10">
