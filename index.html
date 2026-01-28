@@ -100,48 +100,135 @@
         // } else {
         //   alert('Perdu !')
 
-        //function = boite ()= contenu de la boite (autres boites)
-        function comparer(player, computer) {
-          if (player === computer) {
-            return "Egalité"
-          }
-            if (
-            (player === 'Pierre' && computer === 'Ciseaux') ||
-            (player === 'Feuille' && computer === 'Pierre') ||
-            (player === 'Ciseaux' && computer === 'Feuille')
-          ) {
-            console.log ('Gagné');
-          } else {
-            console.log ('Perdu');
-          }
-        }
+        // function = boite ()= contenu de la boite (autres boites)
+      //   function comparer(player, computer) {
+      //     if (player === computer) {
+      //       return "Egalité"
+      //     }
+      //       if (
+      //       (player === 'Pierre' && computer === 'Ciseaux') ||
+      //       (player === 'Feuille' && computer === 'Pierre') ||
+      //       (player === 'Ciseaux' && computer === 'Feuille')
+      //     ) {
+      //       console.log ('Gagné');
+      //     } else {
+      //       console.log ('Perdu');
+      //     }
+      //   }
        
-      function jeu() {
-        let scorePlayer = 0;
-        let scoreComputer = 0;
-        //boucle pour 3 manches
-        for (let i = 0; i < 3; i++) { 
-          // / ? = if / : = if else
-          let randomChoice = Math.random() < 0.33 ? "Pierre" : Math.random() < 0.5 ? "Feuille" : "Ciseaux"; 
-          let playerChoice = prompt("Choisisez Pierre, Feuille ou Ciseaux");
-          let scoreManche = comparer(randomChoice, playerChoice);
-          console.log(scoreManche);
+      // function jeu() {
+      //   let scorePlayer = 0;
+      //   let scoreComputer = 0;
+      //   //boucle pour 3 manches
+      //   for (let i = 0; i < 3; i++) { 
+      //     // / ? = if / : = if else
+      //     let randomChoice = Math.random() < 0.33 ? "Pierre" : Math.random() < 0.5 ? "Feuille" : "Ciseaux"; 
+      //     let playerChoice = prompt("Choisisez Pierre, Feuille ou Ciseaux");
+      //     let scoreManche = comparer(randomChoice, playerChoice);
+      //     console.log(scoreManche);
 
-          if (scoreManche = 'Gagné'){
-            scorePlayer++
-          } else {
-            scoreComputer++
+      //     if (scoreManche = 'Gagné'){
+      //       scorePlayer++
+      //     } else {
+      //       scoreComputer++
+      //     }
+      //   }
+      //   if (scorePlayer > scoreComputer) {
+      //     console.log("Je suis trop fort")
+      //   } else if(scorePlayer < scoreComputer) {
+      //     console.log('Je suis une merde')
+      //   } else {
+      //     console.log("Je suis aussi fort qu'une machine")
+      //   }
+      // }
+      // jeu();
+
+        //-------Parcourir Nombres / Variables Pair et Impaire
+      // function pairImpair() {
+      //   let pair = 0;
+      //   let impair = 0;
+      //   for (let i = 0; i < 10; i++) {
+      //     if ( i % 2 === 0){
+      //       pair++;
+      //     } else {
+      //       impair++;
+      //     }
+      //   }
+      //   console.log(`Il y a ${pair} nombres pairs et ${impair} nombres impairs`);
+      // }
+      // pairImpair();
+
+      // function tableDeMultiplication() {
+      //   //Boucle externe
+      //   for (let e = 1; e <= 5; e++) {
+      //     console.log("Table de " + e);
+      //   //Boucle interne
+      //     for (let i = 1; i <= 10; i++) {
+      //       let résultat = (e * i);
+        
+      //       if (résultat > '30') {
+      //         console.log(résultat + ' GROS RESULTAT');
+      //       } else {
+      //         console.log(résultat);
+      //       }
+      //     }
+      //   }
+      // }
+      // tableDeMultiplication();
+
+      
+        // let guy = ['pink guy', 'purple guy', 'green guy']; 
+        //   console.log(guy);
+        //   console.log(guy.length); //Pour vois nombre de valeur dans mon tableau
+        //   guy[1] = 'blue guy'; // [Pour choisir élément du tableau] à remplacer
+        //   console.log(guy);
+        //   console.log(guy.length);
+        //   guy.push('grey guy'); // Pour rajouter une valeur au tableau
+        //   console.log(guy);
+        //   console.log(guy.length);
+        //   guy.pop(); // Pour supprimer une valeur au tableau
+        //   console.log(guy);
+      
+
+      // let jours = [ 'lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];
+      //   console.log(jours);
+      //   console.log(jours.length);
+
+      //   jours.pop();
+      //   console.log(jours)
+      //   console.log(jours.length);
+
+      //   jours.push('dim')
+      //   console.log(jours)
+      //   console.log(jours.length);
+
+      //   jours[1] = 'mar';
+      //   console.log(jours)
+      //   console.log(jours.length);
+
+      //   jours.indexOf('jeu');
+      //   console.log(jours)
+      //   console.log(jours.length);
+
+      //   console.log(jours[3]);
+
+          function market(){
+            var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
+            console.log (fruits);
+            var fruitsTxt = fruits.join(', ');
+            var customerChoice = prompt('Quel fruit désirez-vous ? ' + fruitsTxt);
+              
+            dispo = fruits.indexOf(customerChoice);
+            
+            if (dispo !== -1) {
+                fruits.splice(dispo, 1);
+                alert('ok!');
+            } else {
+                alert('indisponible');
+            }
+            console.log (fruits);
           }
-        }
-        if (scorePlayer > scoreComputer) {
-          console.log("Je suis trop fort")
-        } else if(scorePlayer < scoreComputer) {
-          console.log('Je suis une merde')
-        } else {
-          console.log("Je suis aussi fort qu'une machine")
-        }
-      }
-      jeu();
+          market()
 </script>
 
 <body class="scrollbar" id="style-10">
