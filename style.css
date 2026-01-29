@@ -144,6 +144,19 @@ On va priviliégier des tailles relatives plutoit  que fixes pour le responsive
 donc les % et vh, vw, rem et em plutot que px
 */
 /*-------------------FIN MENU BURGER---------------------*/
+/*----------------------JEU DU PENDU-------------------------*/
+#visual-feedback img {
+  width: 500px;
+  animation: shake 0.2s infinite; /* Optionnel : fait trembler l'image */
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  25% { transform: translate(-1px, -2px) rotate(-1deg); }
+  50% { transform: translate(-3px, 0px) rotate(1deg); }
+  100% { transform: translate(1px, 1px) rotate(0deg); }
+}
+/*----------------------FIN JEU DU PENDU-------------------------*/
 
 .images1 {
     display: flex;
