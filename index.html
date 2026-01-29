@@ -8,7 +8,8 @@
     <link rel="icon" type=image/svg href="images/icon.svg">
 </head>
 
-<script> // BALISE SCRIPT JS
+<script> 
+        // ---------------------------BALISE SCRIPT JS----------------------------------
         //for ( let i = 1; i <= 199; i++ ) {
 
           //if (i % 3 === 0 && i %5 === 0){
@@ -212,23 +213,80 @@
 
       //   console.log(jours[3]);
 
-          function market(){
-            var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
-            console.log (fruits);
-            var fruitsTxt = fruits.join(', ');
-            var customerChoice = prompt('Quel fruit désirez-vous ? ' + fruitsTxt);
+      // var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
+      // console.log (fruits);
+      // var fruitsTxt = fruits.join(', ');
+      // var customerChoice = prompt('Quel fruit désirez-vous ? ' + fruitsTxt);
               
-            dispo = fruits.indexOf(customerChoice);
+      // //  indexOf parcourt le tableau de gauche à droite 
+      // //  pour trouver le mot stocké dans customerChoice.
+      // dispo = fruits.indexOf(customerChoice); 
             
-            if (dispo !== -1) {
-                fruits.splice(dispo, 1);
-                alert('ok!');
-            } else {
-                alert('indisponible');
-            }
-            console.log (fruits);
+      // if (dispo !== -1) { //  Test de sécurité pour dire SI pas -1 le fruit EXISTE.
+      //     fruits.splice(dispo, 1); // Pour supprimer le produit selectionner par customerChoice
+      //     alert('ok!');
+      // } else {
+      //     alert('indisponible');
+      // }
+      // console.log (fruits);
+      
+
+      <!-- //  Mot = orthographe -->
+        // Utiliser Join à un moment
+      //  TABLEAU MAUVAUSES LETTRES
+      var wrongLetter = [];
+
+      //  TABLEAU LETTRES ATTENDUES
+      //  Si le joueur trouve une lettre, la supprimer du tableau
+      var secretWord = 'orthographe';
+      var goodLetter = secretWord.split('');
+      var goodLetterFound = '';
+
+      while (wrongLetter.length < 10 && goodLetter.length > 0) {
+        let message = 
+        'Nombre de lettres attendues ' + goodLetter.length + '\n' +
+        'Trouvées : '  + goodLetterFound + '\n' +
+        'Erreurs : '  + wrongLetter.join(', ') + '\n' +
+        'Tentatives restantes : '  + (10 - wrongLetter.length) + '\n';
+      
+        var playerChoice = prompt(message).toLowerCase();
+      
+        //choice = goodLetter.indexOf(playerChoice);
+        
+        if (goodLetter.indexOf(playerChoice) !== -1) {
+          //  Quand DANSgoodLetter playerChoice choisit autre que -1
+          let occurencesLetter = 0; //  Compteur de goodLetter POUR les occurences
+
+          while (goodLetter.indexOf(playerChoice) !== -1) { //   Mon futur index
+            
+            //  variable = DANSgoodLetter playerChoice
+            let index = goodLetter.indexOf(playerChoice);
+            
+            //  splice SUPPRIME de goodLetter la lettre choisie 
+            //  PUIS la boucle while recommence car 
+            //  indexOf(playerChoice PAR EXEMPLE 'o' renvois maintenant un 2eme 'o')
+            //  PUIS splice recommence
+            goodLetter.splice(index, 1); //  SUPPRIME une occurence
+            occurencesLetter++; //  COMPTE les occurences
           }
-          market()
+          // OU goodLetterFound = goodLetterFound + playerChoice 
+          // ajoute les bonnes lettres das le tableau
+          goodLetterFound += playerChoice; 
+          alert("Bien joué ! :-)");
+          } else {
+              wrongLetter.push(playerChoice);
+              alert("Raté ! :'(");
+          }
+        console.log (goodLetterFound);
+        console.log (wrongLetter);
+      }
+      if (wrongLetter.length === 10) {
+        alert('PERDU : \nLe mot était : ' + secretWord)
+      } else {
+        alert('GAGNE ! \nMot secret : ' + secretWord)
+      }
+
+
 </script>
 
 <body class="scrollbar" id="style-10">
