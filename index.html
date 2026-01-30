@@ -8,7 +8,7 @@
     <link rel="icon" type=image/svg href="images/icon.svg">
 </head>
 
-<script> 
+<script>
         // ---------------------------BALISE SCRIPT JS----------------------------------
         //for ( let i = 1; i <= 199; i++ ) {
 
@@ -285,6 +285,42 @@
 //         alert('GAGNE ! \nMot secret : ' + secretWord)
 //       }
 // //----------------------------------FIN JEU DU PENDU---------------------------------------
+// //--------------------------------PLAYLIST SPOTIFY--------------------------------------
+
+//  1 playliste qui contient plusieurs types de chansons 
+//  --> afficher playlist et demander à l'utilisateir de choisir un morceau,
+//  afficher la longeur de la playlist, si > à 10 remplacer le 2eme morceau de la playlist
+
+//  'Decadence - Disturbed', 'Sonne - Rammstein', 'Easier to Run - Linkin Park', 'Snot - Snot', 'Chop Suey - System of a Down', "Livin'It Up- Limp Bizkit", 'In the End - Linkin Park
+
+// * ------------------------PLAYLIST-------------------------------
+var playlist = 'Favoris';
+var playlistChosen = prompt('Bienvenue dans votre application FySpoti \nMarquez ➡️' + playlist +
+'⬅️​ pour entrer dans votre playlist')
+var songsInside = ['By Myself - Linkin Park', 'Wait and Bleed - Slipknot',
+'Under the bridge - Red Hot Chilli Pepers', 'Given Up - Linkin Park'];
+var lastSongAdd = [];
+
+let playlistFavorisMsg = 
+  '  ❤️  Playlist Favoris  ❤️ ' + '\n' +
+  'Nombre de musiques : ' + songsInside.length + '\n' +
+  'Dèrnière musique ajoutée : ' + lastSongAdd + '\n'+'\n' +
+
+  '⬇️​ Titres likés'+ '\n' +
+  songsInside.join('\n');
+
+
+if (playlist === playlistChosen) {
+  var playlistFavoris = prompt(playlistFavorisMsg)
+} else {
+  alert('Playlist incorrecte');
+}
+
+for ( let i = 0; i <= 10; i++ ) {
+  var playlistFavoris = prompt(playlistFavorisMsg);
+  lastSongAdd.push(playlistFavoris);
+}
+console.log(lastSongAdd);
 
 </script>
 
@@ -327,7 +363,7 @@
     <main>
       <section>
         <div id="game-container" style="text-align: center; margin-top: 50px;">
-          <div id="visual-feedback"></div>
+          <div id="visual-feedback" </div>
         </div>
       </section>
         <section>
