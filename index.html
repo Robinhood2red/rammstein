@@ -8,8 +8,7 @@
     <link rel="icon" type=image/svg href="images/icon.svg">
 </head>
 
-<script>
-        // ---------------------------BALISE SCRIPT JS----------------------------------
+<script> // BALISE SCRIPT JS
         //for ( let i = 1; i <= 199; i++ ) {
 
           //if (i % 3 === 0 && i %5 === 0){
@@ -213,78 +212,24 @@
 
       //   console.log(jours[3]);
 
-      // var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
-      // console.log (fruits);
-      // var fruitsTxt = fruits.join(', ');
-      // var customerChoice = prompt('Quel fruit désirez-vous ? ' + fruitsTxt);
+          // function market(){
+          //   var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
+          //   console.log (fruits);
+          //   var fruitsTxt = fruits.join(', ');
+          //   var customerChoice = prompt('Quel fruit désirez-vous ? ' + fruitsTxt);
               
-      // //  indexOf parcourt le tableau de gauche à droite 
-      // //  pour trouver le mot stocké dans customerChoice.
-      // dispo = fruits.indexOf(customerChoice); 
+          //   dispo = fruits.indexOf(customerChoice);
             
-      // if (dispo !== -1) { //  Test de sécurité pour dire SI pas -1 le fruit EXISTE.
-      //     fruits.splice(dispo, 1); // Pour supprimer le produit selectionner par customerChoice
-      //     alert('ok!');
-      // } else {
-      //     alert('indisponible');
-      // }
-      // console.log (fruits);
-      
+          //   if (dispo !== -1) {
+          //       fruits.splice(dispo, 1);
+          //       alert('ok!');
+          //   } else {
+          //       alert('indisponible');
+          //   }
+          //   console.log (fruits);
+          // }
+          // market()
 
-//       //-------------------------------JEU DU PENDU--------------------------------------
-//       //  TABLEAU MAUVAUSES LETTRES
-//       var wrongLetter = [];
-
-//       //  TABLEAU LETTRES ATTENDUES
-//       //  Si le joueur trouve une lettre, la supprimer du tableau
-//       var secretWord = 'orthographe';
-//       var goodLetter = secretWord.split('');
-//       var goodLetterFound = '';
-
-//       while (wrongLetter.length < 10 && goodLetter.length > 0) {
-//         let message = 
-//         'Nombre de lettres attendues ' + goodLetter.length + '\n' +
-//         'Trouvées : '  + goodLetterFound + '\n' +
-//         'Erreurs : '  + wrongLetter.join(', ') + '\n' +
-//         'Tentatives restantes : '  + (10 - wrongLetter.length) + '\n';
-      
-//         var playerChoice = prompt(message).toLowerCase();
-      
-//         //choice = goodLetter.indexOf(playerChoice);
-        
-//         if (goodLetter.indexOf(playerChoice) !== -1) {
-//           //  Quand DANSgoodLetter playerChoice choisit autre que -1
-//           let occurencesLetter = 0; //  Compteur de goodLetter POUR les occurences
-
-//           while (goodLetter.indexOf(playerChoice) !== -1) { //   Mon futur index
-            
-//             //  variable = DANSgoodLetter playerChoice
-//             let index = goodLetter.indexOf(playerChoice);
-            
-//             //  splice SUPPRIME de goodLetter la lettre choisie 
-//             //  PUIS la boucle while recommence car 
-//             //  indexOf(playerChoice PAR EXEMPLE 'o' renvois maintenant un 2eme 'o')
-//             //  PUIS splice recommence
-//             goodLetter.splice(index, 1); //  SUPPRIME une occurence
-//             occurencesLetter++; //  COMPTE les occurences
-//           }
-//           // OU goodLetterFound = goodLetterFound + playerChoice 
-//           // ajoute les bonnes lettres das le tableau
-//           goodLetterFound += playerChoice; 
-//           alert("Bien joué ! :-)");
-//           } else {
-//               wrongLetter.push(playerChoice);
-//               alert("Raté ! :'(");
-//           }
-//         console.log (goodLetterFound);
-//         console.log (wrongLetter);
-//       }
-//       if (wrongLetter.length === 10) {
-//         alert('PERDU : \nLe mot était : ' + secretWord)
-//       } else {
-//         alert('GAGNE ! \nMot secret : ' + secretWord)
-//       }
-// //----------------------------------FIN JEU DU PENDU---------------------------------------
 // //--------------------------------PLAYLIST SPOTIFY--------------------------------------
 
 //  1 playliste qui contient plusieurs types de chansons 
@@ -299,28 +244,49 @@ var playlistChosen = prompt('Bienvenue dans votre application FySpoti \nMarquez 
 '⬅️​ pour entrer dans votre playlist')
 var songsInside = ['By Myself - Linkin Park', 'Wait and Bleed - Slipknot',
 'Under the bridge - Red Hot Chilli Pepers', 'Given Up - Linkin Park'];
-var lastSongAdd = [];
+var lastSongAdd = ['Given Up - Linkin Park'];
 
-let playlistFavorisMsg = 
-  '  ❤️  Playlist Favoris  ❤️ ' + '\n' +
-  'Nombre de musiques : ' + songsInside.length + '\n' +
-  'Dèrnière musique ajoutée : ' + lastSongAdd + '\n'+'\n' +
-
-  '⬇️​ Titres likés'+ '\n' +
-  songsInside.join('\n');
-
-
-if (playlist === playlistChosen) {
-  var playlistFavoris = prompt(playlistFavorisMsg)
-} else {
+  // Boucle TANT QUE
+  // POUR que ç arépète tant que la saisie est différente du mot attendu 
+while (playlistChosen !== playlist) {
   alert('Playlist incorrecte');
+  // On redemande la saisie, sinon la variable ne change jamais !
+  playlistChosen = prompt('Essayez encore : Marquez ➡️' + playlist + '⬅️');
 }
 
 for ( let i = 0; i <= 10; i++ ) {
-  var playlistFavoris = prompt(playlistFavorisMsg);
-  lastSongAdd.push(playlistFavoris);
+  let playlistFavorisMsg = 
+  '  ❤️  Playlist Favoris  ❤️ ' + '\n' +
+  'Nombre de musiques : ' + songsInside.length + '\n' +
+  //  Avec le [lastSongAdd.length - 1] : Le prompt n'affiche que le texte pur de la dernière : "Chanson" 
+  //  -1 POUR toujours afficher la dernière chanson
+  'Dèrnière musique ajoutée : ' + lastSongAdd[lastSongAdd.length -1] + '\n'+'\n' +
+
+  '⬇️​ Titres likés'+ '\n' +
+  songsInside.join('\n');
+  // var playlistFavoris = prompt(playlistFavorisMsg);
+  // lastSongAdd.push(playlistFavoris);
+
+  var addSong = prompt(playlistFavorisMsg + "\n\nAjoutez une musique (ou tapez 'stop' pour quitter) :");
+
+  if (addSong === 'stop') {
+        alert('À bientôt !');
+        break; // Arrête immédiatement la boucle for
+    }
+  lastSongAdd.push (addSong);
+  songsInside.push (addSong)
+  alert('Musique ajoutée : ' + addSong)
+  if (songsInside.length >= 2) {
+    var deletee = prompt('Voulez-vous supprimer la 2eme musique : ' + songsInside[1] + ' ? oui ou non');
+
+    if (deletee === 'oui') {
+      songsInside.splice(1, 1);
+      alert('La 2eme musique a bien été supprimée.')
+    }
+  }
 }
 console.log(lastSongAdd);
+console.log(songsInside);
 
 </script>
 
@@ -361,11 +327,6 @@ console.log(lastSongAdd);
         </div>
   </header>
     <main>
-      <section>
-        <div id="game-container" style="text-align: center; margin-top: 50px;">
-          <div id="visual-feedback" </div>
-        </div>
-      </section>
         <section>
             <div class="images1">
               <img class="imgsection1" src="images/fire.jpg" alt="fire">
