@@ -239,54 +239,100 @@
 //  'Decadence - Disturbed', 'Sonne - Rammstein', 'Easier to Run - Linkin Park', 'Snot - Snot', 'Chop Suey - System of a Down', "Livin'It Up- Limp Bizkit", 'In the End - Linkin Park
 
 // * ------------------------PLAYLIST-------------------------------
-var playlist = 'Favoris';
-var playlistChosen = prompt('Bienvenue dans votre application FySpoti \nMarquez ➡️' + playlist +
-'⬅️​ pour entrer dans votre playlist')
-var songsInside = ['By Myself - Linkin Park', 'Wait and Bleed - Slipknot',
-'Under the bridge - Red Hot Chilli Pepers', 'Given Up - Linkin Park'];
-var lastSongAdd = ['Given Up - Linkin Park'];
+// var playlist = 'Favoris';
+// var playlistChosen = prompt('Bienvenue dans votre application FySpoti \nMarquez ➡️' + playlist +
+// '⬅️​ pour entrer dans votre playlist')
+// var songsInside = ['By Myself - Linkin Park', 'Wait and Bleed - Slipknot',
+// 'Under the bridge - Red Hot Chilli Pepers', 'Given Up - Linkin Park'];
+// var lastSongAdd = ['Given Up - Linkin Park'];
 
-  // Boucle TANT QUE
-  // POUR que ç arépète tant que la saisie est différente du mot attendu 
-while (playlistChosen !== playlist) {
-  alert('Playlist incorrecte');
-  // On redemande la saisie, sinon la variable ne change jamais !
-  playlistChosen = prompt('Essayez encore : Marquez ➡️' + playlist + '⬅️');
-}
+//   // Boucle TANT QUE
+//   // POUR que ç arépète tant que la saisie est différente du mot attendu 
+// while (playlistChosen !== playlist) {
+//   alert('Playlist incorrecte');
+//   // On redemande la saisie, sinon la variable ne change jamais !
+//   playlistChosen = prompt('Essayez encore : Marquez ➡️' + playlist + '⬅️');
+// }
 
-for ( let i = 0; i <= 10; i++ ) {
-  let playlistFavorisMsg = 
-  '  ❤️  Playlist Favoris  ❤️ ' + '\n' +
-  'Nombre de musiques : ' + songsInside.length + '\n' +
-  //  Avec le [lastSongAdd.length - 1] : Le prompt n'affiche que le texte pur de la dernière : "Chanson" 
-  //  -1 POUR toujours afficher la dernière chanson
-  'Dèrnière musique ajoutée : ' + lastSongAdd[lastSongAdd.length -1] + '\n'+'\n' +
+// for ( let i = 0; i <= 10; i++ ) {
+//   let playlistFavorisMsg = 
+//   '  ❤️  Playlist Favoris  ❤️ ' + '\n' +
+//   'Nombre de musiques : ' + songsInside.length + '\n' +
+//   //  Avec le [lastSongAdd.length - 1] : Le prompt n'affiche que le texte pur de la dernière : "Chanson" 
+//   //  -1 POUR toujours afficher la dernière chanson
+//   'Dèrnière musique ajoutée : ' + lastSongAdd[lastSongAdd.length -1] + '\n'+'\n' +
 
-  '⬇️​ Titres likés'+ '\n' +
-  songsInside.join('\n');
-  // var playlistFavoris = prompt(playlistFavorisMsg);
-  // lastSongAdd.push(playlistFavoris);
+//   '⬇️​ Titres likés'+ '\n' +
+//   songsInside.join('\n');
+//   // var playlistFavoris = prompt(playlistFavorisMsg);
+//   // lastSongAdd.push(playlistFavoris);
 
-  var addSong = prompt(playlistFavorisMsg + "\n\nAjoutez une musique (ou tapez 'stop' pour quitter) :");
+//   var addSong = prompt(playlistFavorisMsg + "\n\nAjoutez une musique (ou tapez 'stop' pour quitter) :");
 
-  if (addSong === 'stop') {
-        alert('À bientôt !');
-        break; // Arrête immédiatement la boucle for
-    }
-  lastSongAdd.push (addSong);
-  songsInside.push (addSong)
-  alert('Musique ajoutée : ' + addSong)
-  if (songsInside.length >= 2) {
-    var deletee = prompt('Voulez-vous supprimer la 2eme musique : ' + songsInside[1] + ' ? oui ou non');
+//   if (addSong === 'stop') {
+//         alert('À bientôt !');
+//         break; // Arrête immédiatement la boucle for
+//     }
+//   lastSongAdd.push (addSong);
+//   songsInside.push (addSong)
+//   alert('Musique ajoutée : ' + addSong)
+//   if (songsInside.length >= 2) {
+    
+//     var deletee = prompt('Voulez-vous supprimer la 2eme musique : ' + songsInside[1] + ' ? oui ou non');
 
-    if (deletee === 'oui') {
-      songsInside.splice(1, 1);
-      alert('La 2eme musique a bien été supprimée.')
-    }
+//     if (deletee === 'oui') {
+//       songsInside.splice(1, 1);
+//       alert('La 2eme musique a bien été supprimée.')
+//     }
+//   }
+// }
+// console.log(lastSongAdd);
+// console.log(songsInside);
+
+// * --------------------------ANNUAIRE TELEPHONIQUE-----------------------------
+
+var annuaire = {
+  Patricia: '06 66 66 66 66',
+  David: '07 77 77 77 77',
+};
+
+//console.log(annuaire['Patricia'])
+
+//var annuaireResearch = prompt('Veuillez entrer un nom :')
+
+//  1er annuaireResearch Pour voir prompt ---- 2eme pour afficher l'objet voulu
+//alert(annuaireResearch + (' : ') +(annuaire[annuaireResearch]));
+
+let command = '';
+
+while(command !== 'q') {
+  command = prompt("Que souhaitez vous faire : \n 'r' pour rechercher, \n 'l' pour afficher la liste, \n 'a' pour ajouter, \n et 's' pour supprimer, \n Tapez 'q' pour quitter.");
+
+  switch(command){
+    case 'r': 
+      var researchBar = prompt('Tapez ici le nom du contact recherché');
+        if (annuaire[researchBar]) { //si ce qui est tappé dans researchBar existe dans annuaire
+          alert('Le numéro est ' + researchBar + (' : ') + annuaire[researchBar]);
+        } else {
+          alert("Ce nom n'existe pas")
+        } 
+    ;
+    case 'l': 
+      var contactList = 'Votre liste de contact';
+       
+    ;
+    case 'a': 
+    ;
+    case 's': 
+    ;
+    case 'q': 
   }
 }
-console.log(lastSongAdd);
-console.log(songsInside);
+
+
+
+console.log(annuaire);
+
 
 </script>
 
