@@ -296,13 +296,6 @@ var annuaire = {
   David: '07 77 77 77 77',
 };
 
-//console.log(annuaire['Patricia'])
-
-//var annuaireResearch = prompt('Veuillez entrer un nom :')
-
-//  1er annuaireResearch Pour voir prompt ---- 2eme pour afficher l'objet voulu
-//alert(annuaireResearch + (' : ') +(annuaire[annuaireResearch]));
-
 let command = '';
 
 while(command !== 'q') {
@@ -310,27 +303,47 @@ while(command !== 'q') {
 
   switch(command){
     case 'r': 
-      var researchBar = prompt('Tapez ici le nom du contact recherché');
-        if (annuaire[researchBar]) { //si ce qui est tappé dans researchBar existe dans annuaire
-          alert('Le numéro est ' + researchBar + (' : ') + annuaire[researchBar]);
+      var contactResearch = prompt('Tapez ici le nom du contact recherché');
+        if (annuaire[contactResearch]) { //si ce qui est tappé dans contactResearch existe dans annuaire
+          alert('Le numéro est ' + contactResearch + (' : ') + annuaire[contactResearch]);
         } else {
           alert("Ce nom n'existe pas")
-        } 
+        }
     ;
     case 'l': 
-      var contactList = 'Votre liste de contact';
-       
+      var contactList = 'Votre liste de contact : \n';
+       for (let name in annuaire) {
+        contactList += name  + ' : ' + annuaire[name] + '\n';
+       }
+      alert(contactList);
+      break;
     ;
-    case 'a': 
+    case 'a': //  Ajout du NOM puis du NUMERO
+    var newName = prompt('Nom du nouveau contact :')
+    var newNumber = prompt('Numéro du nouveau contact :')
+
+    annuaire[newName] = newNumber; // [newName]props1 = newNmber props2 ---- 
+    //  si props3 crée nouvelle var puis ajouter apres newNumber = jspquoi à ajouter a l'objet
+    alert('Contact ajouté !');
+    break;
     ;
     case 's': 
+      var deleteName = prompt('Nom du contact à supprimer :')
+      if (annuaire[deleteName]) {
+        delete annuaire[deleteName]; // Commande pour supprimer
+        alert('Contact supprimé !')
+      } else {
+        alert('Nom entré inconnu');
+      }
+      break;
     ;
     case 'q': 
+        alert('À bientôt !');
+        break; // Arrête immédiatement la boucle
+    default: // Si pas un des cas précédent sort autre chose
+      alert('Commande inconnue');
   }
 }
-
-
-
 console.log(annuaire);
 
 
