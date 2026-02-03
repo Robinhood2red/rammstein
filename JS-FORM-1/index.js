@@ -8,14 +8,13 @@
 //      alert('Bonjour !');
 //  };
 
-let nombreNUn = document.getElementById("nombreNUn").value = function parseInt() {
-};
+let nombre1 = document.getElementById("nombreUn");
 
-let nombreNDeux = document.getElementById("nombreNDeux").value = function parseInt() { 
-};
+let nombre2 = document.getElementById("nombreDeux");
 
-let monBouton = document.getElementById("monBouton").onclick = function parseInt() {
-};
+let theResultat = document.getElementById("resultat");
 
-let resultat = document.getElementById("resultat").value;
+let nombre1Number = parseInt(nombre1.value);
+let nombre2Number = parseInt(nombre2.value);
 
+theResultat.value = nombre1Number + nombre2Number;
