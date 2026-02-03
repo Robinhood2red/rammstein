@@ -291,60 +291,75 @@
 
 // * --------------------------ANNUAIRE TELEPHONIQUE-----------------------------
 
-var annuaire = {
-  Patricia: '06 66 66 66 66',
-  David: '07 77 77 77 77',
-};
+// var annuaire = {
+//   Patricia: '06 66 66 66 66',
+//   David: '07 77 77 77 77',
+// };
 
-let command = '';
+// let command = '';
 
-while(command !== 'q') {
-  command = prompt("Que souhaitez vous faire : \n 'r' pour rechercher, \n 'l' pour afficher la liste, \n 'a' pour ajouter, \n et 's' pour supprimer, \n Tapez 'q' pour quitter.");
+// while(command !== 'q') {
+//   command = prompt("Que souhaitez vous faire : \n 'r' pour rechercher, \n 'l' pour afficher la liste, \n 'a' pour ajouter, \n et 's' pour supprimer, \n Tapez 'q' pour quitter.");
 
-  switch(command){
-    case 'r': 
-      var contactResearch = prompt('Tapez ici le nom du contact recherché');
-        if (annuaire[contactResearch]) { //si ce qui est tappé dans contactResearch existe dans annuaire
-          alert('Le numéro est ' + contactResearch + (' : ') + annuaire[contactResearch]);
-        } else {
-          alert("Ce nom n'existe pas")
-        }
-    ;
-    case 'l': 
-      var contactList = 'Votre liste de contact : \n';
-       for (let name in annuaire) {
-        contactList += name  + ' : ' + annuaire[name] + '\n';
-       }
-      alert(contactList);
-      break;
-    ;
-    case 'a': //  Ajout du NOM puis du NUMERO
-    var newName = prompt('Nom du nouveau contact :')
-    var newNumber = prompt('Numéro du nouveau contact :')
+//   switch(command) {
+//     case 'r': 
+//       var contactResearch = prompt('Tapez ici le nom du contact recherché');
+//         if (annuaire[contactResearch]) { //si ce qui est tappé dans contactResearch existe dans annuaire
+//           alert('Le numéro est ' + contactResearch + (' : ') + annuaire[contactResearch]);
+//         } else {
+//           alert("Ce nom n'existe pas")
+//         }
+//     ;
+//     case 'l': 
+//       var contactList = 'Votre liste de contact : \n';
+//        for (let name in annuaire) {
+//         contactList += name  + ' : ' + annuaire[name] + '\n'; // += -> contactList + name = contactList
+//        }
+//       alert(contactList);
+//       break;
+//     ;
+//     case 'a': //  Ajout du NOM puis du NUMERO
+//     var newName = prompt('Nom du nouveau contact :')
+//     var newNumber = prompt('Numéro du nouveau contact :')
 
-    annuaire[newName] = newNumber; // [newName]props1 = newNmber props2 ---- 
-    //  si props3 crée nouvelle var puis ajouter apres newNumber = jspquoi à ajouter a l'objet
-    alert('Contact ajouté !');
-    break;
-    ;
-    case 's': 
-      var deleteName = prompt('Nom du contact à supprimer :')
-      if (annuaire[deleteName]) {
-        delete annuaire[deleteName]; // Commande pour supprimer
-        alert('Contact supprimé !')
-      } else {
-        alert('Nom entré inconnu');
-      }
-      break;
-    ;
-    case 'q': 
-        alert('À bientôt !');
-        break; // Arrête immédiatement la boucle
-    default: // Si pas un des cas précédent sort autre chose
-      alert('Commande inconnue');
+//     annuaire[newName] = newNumber; // [newName]props1 = newNmber props2 ---- 
+//     //  si props3 crée nouvelle var puis ajouter apres newNumber = jspquoi à ajouter a l'objet
+//     alert('Contact ajouté !');
+//     break;
+//     ;
+//     case 's': 
+//       var deleteName = prompt('Nom du contact à supprimer :')
+//       if (annuaire[deleteName]) {
+//         delete annuaire[deleteName]; // Commande pour supprimer
+//         alert('Contact supprimé !')
+//       } else {
+//         alert('Nom entré inconnu');
+//       }
+//       break;
+//     ;
+//     case 'q': 
+//         alert('À bientôt !');
+//         break; // Arrête immédiatement la boucle
+//     default: // Si pas un des cas précédent sort autre chose
+//       alert('Commande inconnue');
+//   }
+// }
+// console.log(annuaire);
+
+class Etudiant {
+  constructor(age, prenom, poid, sexe) {
+    this.age=age;
+    this.prenom=prenom;
+    this.poid=poid;
+    this.sexe=sexe;
   }
 }
-console.log(annuaire);
+
+let etudiant1 = new Etudiant('22 ans \n', 'Alexandre \n', '68kg \n', '2 à 3 fois par jours');
+let etudiant2 = new Etudiant('31 \n', 'Mélissa \n', '65kg \n', 'homme mais aime bien les femmes aussi');
+
+alert('Age : ' + etudiant1.age + 'Prénom : ' + etudiant1.prenom + 'Poid : ' + etudiant1.poid  + 'Sexe : ' + etudiant1.sexe);
+alert('Age : '  + etudiant2.age + 'Prénom : ' + etudiant2.prenom + 'Poid : ' + etudiant2.poid  + 'Sexe : ' + etudiant2.sexe);
 
 
 </script>
@@ -361,7 +376,7 @@ console.log(annuaire);
                     <ul class="liens">
                         <li><a href="#">Accueil</a></li>
                         <li><a target="_blank" href="https://www.rammsteinworld.com">Rammstein fr</a></li>
-                        <li><a target="_blank" href="https://open.spotify.com/intl-fr/artist/6wWVKhxIU2cEi0K81v7HvP">Spotify</a></li>
+                        <li><a target="_blank" href="link/bonjour.html">bonjour</a></li>
                         <li><a href="link/contact.html">Contact</a></li>
                     </ul>
                 </nav>
