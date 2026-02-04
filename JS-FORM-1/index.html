@@ -3,27 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
     <title>JS-FORM</title>
     <link rel="icon" type=image/svg href="../images/icon.svg">
 </head>
 <body>
-
-    <form>
         <!-- <label for="nom">Nom</label>
         <input id="nom" value="Mellot"/>
         <label for="prenom">Prénom</label>
         <input id="prenom" value="Amelia"/> -->
 
         <!-- <button style="background-color: rgb(163, 121, 15);" style="height: 10;" id="buttonTheFirst" onclick = direBonjour()>Cliquez ici</button> -->
-        <label for="">Nombre 1</label>
+        
+        <!-- *-------------------Calculette additions------------------ -->
+        <!-- <label style="color: antiquewhite;" for="">Nombre 1</label>
         <input id="nombreUn" type="text">
-        <label for="">nombre 2</label>
+        <label style="color: antiquewhite;" for="">nombre 2</label>
         <input id="nombreDeux" type="text">
-        <button id="monBouton" onclick = addition() style="background-color: orangered;">=</button>
         <input id="resultat" type="text">
+        <button id="monBouton" onclick = 'addition()' style="background-color: orangered;">=</button> -->
+        <!-- *-------------------FIN Calculette additions------------------ -->
+    
+        <!-- <p id="visible" onclick="colorSwipe(this)" class="spoiler">On me vois !</p> 
+        <p id="invisible" onclick="colorSwipe(this)" class="spoiler">On me vois plus !</p>
+        <p id="invisibleM" onclick="colorSwipe(this)" class="spoiler">On me vois moyen !</p>
+        <p id="invisibleP" onclick="colorSwipe(this)" class="spoiler">On me vois un peu !</p>
+        <p id="invisibleS" onclick="colorSwipe(this)" class="spoiler">Il a dit sparu !</p> -->
+        <!-- <button id="myBoutton" onclick = 'disappear()' style="background-color: yellow;">\  ===  /</button> -->
 
-    </form>
+        <section>
+            <div class="clock">
+                <span id="hours"></span><span id="minutes"></span><span id="seconds"></span>
+            </div>
+        </section>
 
     <script src="index.js"></script>
 </body>

@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Pour inclure les marges internes et les bordures dans les marges des parents*/
+}
+
+a{
+    text-decoration: none; /*enlève les deco texte*/
+}
+
+:root {
+    --darkgold: rgb(163, 121, 15);
+    --a-hover: goldenrod;
+    --stylePrimary: display: flex, justify-content: center;
+}
+
+body {
+    background-image: url(../images/deutschlandnoback.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 500px;
+    background-position: center;
+    background-color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.spoiler {
+    color: grey;
+}
+
+.clock {
+  font-size: 5em;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  background-color: gray;
+}
