@@ -133,20 +133,58 @@
    //    }
 
 
-   //* ---------------------------HORLOGE FONCTIONNELLE--------------------------------------
-function clock() {
-   const clockSystem = new Date();
-   let h = clockSystem.getHours();
-   let m = clockSystem.getMinutes();
-   let s = clockSystem.getSeconds();
+   //* ------------------------------HORLOGE FONCTIONNELLE--------------------------------------
+// function clock() {
+//    const clockSystem = new Date();
+//    let h = clockSystem.getHours();
+//    let m = clockSystem.getMinutes();
+//    let s = clockSystem.getSeconds();
 
-   h = h<10 ? '0' + h : h;
-   m = m<10 ? '0' + m : m;
-   s = s<10 ? '0' + s : s;
+//    h = h<10 ? '0' + h : h;
+//    m = m<10 ? '0' + m : m;
+//    s = s<10 ? '0' + s : s;
 
-   const time = h + ' : ' + m + ' : ' + s;
-   document.getElementById('clockID').innerHTML = time;
-}
-setInterval(clock, 1000)
-clock();
-   //* --------------------------------FIN HORLOGE--------------------------------------------
+//    const time = h + ' : ' + m + ' : ' + s;
+//    document.getElementById('clockID').innerHTML = time;
+// }
+// setInterval(clock, 1000);
+// clock();
+   //* ----------------------------------FIN HORLOGE--------------------------------------------
+   //* ---------------------------------NBR PAIR IMPAIR-----------------------------------------
+// function pairImpair(nbr) {
+//    return nbr % 2 === 0;
+// }
+// console.log(pairImpair(15));
+// console.log(pairImpair(34));
+// console.log(pairImpair(40));
+//* ----------------------------------FIN NBR PAIR IMPAIR---------------------------------------
+
+// function palindrome(mot) {
+//    return mot === mot.split('').reverse().join('');
+// }
+//     let userWord = prompt('Ecrivez votre mot ici');
+
+//    if (palindrome(userWord)) {
+//       alert(`"${userWord}" est un palindrome`)
+//    } else {
+//        alert(`"${userWord}" n'est pas un palindrome`)
+//    };
+
+//* ----------------------------------------FEU TRICOLORE-------------------------------------------------
+// setinterval
+//getelementbyID
+
+red = document.getElementById('red');
+orange = document.getElementById('orenge');
+green = document.getElementById('green');
+
+elements.forEach((element) => {
+  elementsCopie.push(element);
+});
+
+
+
+// 2 variables avec boucle for ou forEach pour vérifier que rien est allumé sinon éteint 
+// allumage lumière CSS 
+// gestion scequence -> implément compteur pour passer d'une lumière à l'autre
+// si dernière lumière repartir à 0 --> set intervale if dernière lumière --> 0

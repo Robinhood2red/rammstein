@@ -50,3 +50,30 @@ body {
   box-shadow: 0 0 30px rgba(163, 121, 15, 0.589);
   text-shadow: 8px 8px 20px var(--darkgold);
 }
+
+/* --------------------------------FEU TRICOLORE--------------------------------------- */
+.feuExt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 220px;
+}
+.feuInt {
+    width: 100px;
+    height: 300px;
+    background-color: #333;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+.lights {
+    width: 70px;
+    height: 70px;
+    background-color: #111;
+    border-radius: 50%;
+}
+/* --------------------------------FIN FEU TRICOLORE--------------------------------------- */
