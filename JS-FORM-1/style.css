@@ -31,11 +31,22 @@ body {
     color: grey;
 }
 
+.clockBack {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    
+}
+
 .clock {
   font-size: 5em;
-  color: aliceblue;
+  color: rgb(224, 215, 190);
   display: flex;
   justify-content: center;
   padding: 2%;
-  background-color: gray;
+  background-color: rgba(0, 0, 0, 0.671);
+  width: 700px;
+  border-radius: 0px;
+  box-shadow: 0 0 30px rgba(163, 121, 15, 0.589);
+  text-shadow: 8px 8px 20px var(--darkgold);
 }

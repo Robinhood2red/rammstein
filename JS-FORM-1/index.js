@@ -26,14 +26,14 @@
 // let element = document.getElementById('invisible');
 // element.classList.remove('hidden'); 
 
-function disappear() {
-    let elements = document.getElementsByClassName('spoiler'); 
-    for(let i = 0; i < elements.length; i++) {
-        setTimeout(function() { //*--- setTimeoutQ pour quoi faire (masquer) puis quand le faire (à chaque index) 
-           elements[i].classList.add('hidden');
-        }, i * 300, i); //*--- pour un index toutes les 300ms
-    }
-}
+// function disappear() {
+//     let elements = document.getElementsByClassName('spoiler'); 
+//     for(let i = 0; i < elements.length; i++) {
+//         setTimeout(function() { //*--- setTimeoutQ pour quoi faire (masquer) puis quand le faire (à chaque index) 
+//            elements[i].classList.add('hidden');
+//         }, i * 300, i); //*--- pour un index toutes les 300ms
+//     }
+// }
 
 // function colorChanges() {
 // // Pour récuperer tout les paragraphes avec querySelectorAll, donc 'p'
@@ -69,9 +69,9 @@ function disappear() {
 
 
 
-   let seconds = 55;
-   let minutes =  59;
-   let hours = 0;
+   // let seconds = 57;
+   // let minutes =  59;
+   // let hours = 0;
 
    // seconds ++;
 
@@ -87,25 +87,26 @@ function disappear() {
    //    hours = 0;
    // }
 
-   const clock = setInterval(() => {
-      seconds ++;
+   // const clock = setInterval(() => {
+   //    seconds ++;
 
-      if (seconds >= 60) {
-         seconds = 0;
-         minutes ++;
-      }
-      if (minutes >= 60) {
-         minutes = 0;
-         minutes++;
-      }
-      if (hours >= 24) {
-         clearInterval(intervalId);
-      }
-      let clockSystem = document.querySelectorAll('.clock');
-      clockSystem = hours + ' : ' + minutes + ' : ' + seconds;
-      console.log(clockSystem)
-   }, 1000); // 1000ms entre chaque affichage
+   //    if (seconds >= 60) {
+   //       seconds = 0;
+   //       minutes ++;
+   //    }
+   //    if (minutes >= 60) {
+   //       minutes = 0;
+   //       hours++;
+   //    }
+   //    if (hours >= 24) {
+   //       hours = 0;
+   //       clearInterval(clock);
+   //    }
+   //    let clockSystem = document.querySelectorAll('.clock');
+   //    clockSystem = hours + ' : ' + minutes + ' : ' + seconds;
 
+   //    console.log(clockSystem)
+   // }, 1000); // 1000ms entre chaque affichage
 
 
    // let compteur = 0;
@@ -131,3 +132,21 @@ function disappear() {
    //       }, i * 1000, i);
    //    }
 
+
+   //* ---------------------------HORLOGE FONCTIONNELLE--------------------------------------
+function clock() {
+   const clockSystem = new Date();
+   let h = clockSystem.getHours();
+   let m = clockSystem.getMinutes();
+   let s = clockSystem.getSeconds();
+
+   h = h<10 ? '0' + h : h;
+   m = m<10 ? '0' + m : m;
+   s = s<10 ? '0' + s : s;
+
+   const time = h + ' : ' + m + ' : ' + s;
+   document.getElementById('clockID').innerHTML = time;
+}
+setInterval(clock, 1000)
+clock();
+   //* --------------------------------FIN HORLOGE--------------------------------------------
