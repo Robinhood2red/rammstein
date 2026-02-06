@@ -173,28 +173,40 @@
 //* ----------------------------------------FEU TRICOLORE-------------------------------------------------
 // setinterval
 //getelementbyID
-let lights = document.querySelectorAll('.light');
-let currentIndex = 0;
+// let lights = document.querySelectorAll('.light');
+// let currentIndex = 0;
 
-function fireOn() {
-   lights.forEach((light, index) => {
-      if (index === currentIndex) {
-         light.classList.add('active');
-         light.style.opacity = '1';
-      } else {
-            light.classList.remove('active');
-            light.style.opacity = '0.3';
-         };
-      });
-      currentIndex++;
-      if (currentIndex >= lights.length) {
-         currentIndex = 0;
-      };  
-   };
-setInterval(fireOn, 1500);
-console.log(fireOn);
+// function fireOn() {
+//    lights.forEach((light, index) => {
+//       if (index === currentIndex) {
+//          light.classList.add('active');
+//          light.style.opacity = '1';
+//       } else {
+//             light.classList.remove('active');
+//             light.style.opacity = '0.3';
+//          };
+//       });
+//       currentIndex++;
+//       if (currentIndex >= lights.length) {
+//          currentIndex = 0;
+//       };  
+//    };
+// setInterval(fireOn, 1500);
+// console.log(fireOn);
 
 // 2 variables avec boucle for ou forEach pour vérifier que rien est allumé sinon éteint 
 // allumage lumière CSS 
 // gestion sequence -> implément compteur pour passer d'une lumière à l'autre
 // si dernière lumière repartir à 0 --> set intervale if dernière lumière --> 0
+//* ----------------------------------------FIN FEU TRICOLORE-------------------------------------------------
+
+// Crée modale html --> titre, croix, 
+// addeventlistener('click') --> window
+// Pouvoir fermer l'add en cliquand sur la croix ou nimporte où + l'arrière plan est grisé
+// addclasslist / removelist
+
+let button = document.getElementById('button');
+let modal = document.getElementById('modal');
+let close = document.getElementsByClassName('close')[0];
+
+modal.addEventListener('click');

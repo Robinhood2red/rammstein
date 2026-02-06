@@ -94,3 +94,15 @@ body {
     transform: scale(1.05);
 }
 /* --------------------------------FIN FEU TRICOLORE--------------------------------------- */
+
+.button {
+  display: block;
+  margin: auto;
+  width: 12rem;
+  height: 2rem;
+}
+.modal {
+  background-color: beige;
+  border: 2px solid var(--darkgold);
+  border-radius: 5px;
+}
