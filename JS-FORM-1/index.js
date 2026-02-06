@@ -173,18 +173,28 @@
 //* ----------------------------------------FEU TRICOLORE-------------------------------------------------
 // setinterval
 //getelementbyID
+let lights = document.querySelectorAll('.light');
+let currentIndex = 0;
 
-red = document.getElementById('red');
-orange = document.getElementById('orenge');
-green = document.getElementById('green');
-
-elements.forEach((element) => {
-  elementsCopie.push(element);
-});
-
-
+function fireOn() {
+   lights.forEach((light, index) => {
+      if (index === currentIndex) {
+         light.classList.add('active');
+         light.style.opacity = '1';
+      } else {
+            light.classList.remove('active');
+            light.style.opacity = '0.3';
+         };
+      });
+      currentIndex++;
+      if (currentIndex >= lights.length) {
+         currentIndex = 0;
+      };  
+   };
+setInterval(fireOn, 1500);
+console.log(fireOn);
 
 // 2 variables avec boucle for ou forEach pour vérifier que rien est allumé sinon éteint 
 // allumage lumière CSS 
-// gestion scequence -> implément compteur pour passer d'une lumière à l'autre
+// gestion sequence -> implément compteur pour passer d'une lumière à l'autre
 // si dernière lumière repartir à 0 --> set intervale if dernière lumière --> 0
