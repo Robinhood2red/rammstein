@@ -101,8 +101,11 @@ body {
   width: 12rem;
   height: 2rem;
 }
-.modal {
+#modal {
   background-color: beige;
   border: 2px solid var(--darkgold);
   border-radius: 5px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
 }

@@ -205,8 +205,23 @@
 // Pouvoir fermer l'add en cliquand sur la croix ou nimporte où + l'arrière plan est grisé
 // addclasslist / removelist
 
-let button = document.getElementById('button');
+let button = document.querySelector('.button');
 let modal = document.getElementById('modal');
 let close = document.getElementsByClassName('close')[0];
 
-modal.addEventListener('click');
+// Pour ouvrir la modale en cliquant sur le bouton
+button.addEventListener('click', () => {
+    modal.style.display = "block";
+});
+
+// Fermer la modale
+close.addEventListener('click', () => {
+    modal.style.display = "none";
+});
+
+// Fermer la modale en cliquant autour
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
