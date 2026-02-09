@@ -15,7 +15,7 @@ a{
 }
 
 body {
-    background-image: url(../images/deutschlandnoback.png);
+    background-image: url(../images/linkin\ park.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 500px;
@@ -101,11 +101,12 @@ body {
   width: 12rem;
   height: 2rem;
 }
-#modal {
+#modalID {
   background-color: beige;
   border: 2px solid var(--darkgold);
   border-radius: 5px;
   width: 500px;
-  display: flex;
-  justify-content: center;
+}
+.close {
+    cursor: pointer;
 }

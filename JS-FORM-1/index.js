@@ -200,28 +200,70 @@
 // si dernière lumière repartir à 0 --> set intervale if dernière lumière --> 0
 //* ----------------------------------------FIN FEU TRICOLORE-------------------------------------------------
 
+//* ----------------------------------------MODAL-------------------------------------------------
+
 // Crée modale html --> titre, croix, 
 // addeventlistener('click') --> window
 // Pouvoir fermer l'add en cliquand sur la croix ou nimporte où + l'arrière plan est grisé
 // addclasslist / removelist
 
-let button = document.querySelector('.button');
-let modal = document.getElementById('modal');
-let close = document.getElementsByClassName('close')[0];
+// let button = document.querySelector('.button');
+// let modal = document.getElementById('modalID');
+// let closedBtn = document.querySelector('.close');
 
-// Pour ouvrir la modale en cliquant sur le bouton
-button.addEventListener('click', () => {
-    modal.style.display = "block";
-});
+// // Pour ouvrir la modale en cliquant sur le bouton
+// button.addEventListener('click', () => {
+//    modal.showModal();
+// });
 
-// Fermer la modale
-close.addEventListener('click', () => {
-    modal.style.display = "none";
-});
+// // Fermer la modale
+// closedBtn.addEventListener('click', () => {
+//    modal.close();
+// });
 
-// Fermer la modale en cliquant autour
-window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-});
+// // Fermer la modale en cliquant autour
+// window.addEventListener('click', (event) => {
+//    if(event.target === modal) { // event = évènement --> .target donc cible === modal --> 
+//    //  modal.close() .close = fonction close
+//       modal.close();
+//    }
+// });
+//* ----------------------------------------FIN MODAL-------------------------------------------------
+//* ---------------------------------------CALCULATOR----------------------------------------------
+// class Calculator {
+//    constructor(myList) { // constructor toujours dans une class 
+//       this.list = myList;
+//    };
+
+//    calcul() {
+//       let total = 0;
+//       for (let number of this.list) {
+//          total += number;
+//       }
+//       return total; // Pour additionner dans total
+//    };
+//    result() {
+//       let finalSum = this.calcul();
+//       console.log(`Le total est : ${finalSum}`);
+//    };
+//  };
+
+// const listNumbers = [20, 30, 10, 80];
+// const resultatNombre = new Calculator(listNumbers);
+// resultatNombre.result();
+// // 2eme calcul
+// const listNumbers2 = [45, 8, 12];
+// const resultatNombre2 = new Calculator(listNumbers2);
+// resultatNombre2.result();
+//* --------------------------------------FIN CALCULATOR--------------------------------------------
+class Arena {
+   constructor(gun, slap, knife) { // constructor toujours dans une class 
+      this.gun = gun;
+      this.slap = slap;
+      this.knife = knife;
+   };
+ afficher() {
+   return `The big ${this.gun} and a amazing ${this.slap} or a small swiss ${this.knife}`;
+ }
+ };
+
