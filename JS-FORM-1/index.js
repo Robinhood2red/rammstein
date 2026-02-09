@@ -256,14 +256,113 @@
 // const resultatNombre2 = new Calculator(listNumbers2);
 // resultatNombre2.result();
 //* --------------------------------------FIN CALCULATOR--------------------------------------------
-class Arena {
-   constructor(gun, slap, knife) { // constructor toujours dans une class 
-      this.gun = gun;
-      this.slap = slap;
-      this.knife = knife;
-   };
- afficher() {
-   return `The big ${this.gun} and a amazing ${this.slap} or a small swiss ${this.knife}`;
- }
- };
 
+// *----------------------------------------BARBARIANS-----------------------------------------------
+// class Barbarian {
+//    constructor(gun, slap, knife) { // constructor toujours dans une class 
+//       this.gun = gun;
+//       this.slap = slap;
+//       this.knife = knife;
+//    };
+//  afficher() {
+//    return `You can use the big ${this.gun} ,and a amazing ${this.slap} or a small swiss ${this.knife}`;
+//  }
+//  result() {
+//    let weapons = this.afficher();
+//    console.log(`Weapons available : ${weapons}`);
+//    };
+// };
+
+// const myBarbarian = new Barbarian('gun', 'slap', 'knife');
+// myBarbarian.result();
+// // *----------------------------------------WIZARDS-----------------------------------------------
+// class Wizards {
+//    constructor(avada, psw, testicularTorsion) {
+//       this.avada = avada;
+//       this.psw = psw;
+//       this.testicularTorsion = testicularTorsion;
+//    };
+//  afficher() {
+//    return `You can cast ${this.avada} ,an amazing ${this.psw} (only for smartphone) or a ${this.testicularTorsion} (don't work on old school women)`;
+//  }
+//  result() {
+//    let weapons = this.afficher();
+//    console.log(`Magic spells available : ${weapons}`);
+//    };
+// };
+
+// const myWisard = new Wizards('avadakedavra', 'incorrect password', 'testicular torsion');
+// myWisard.result();
+
+// *----------------------------------------4 PERSONNAGES-----------------------------------------------
+class Character {
+    constructor(name, title, strength, PV) {
+        this.name = name;
+        this.title = title;
+        this.PV = PV;
+        this.strength = strength;
+    };
+
+    // Méthode commune à tous les personnages
+    decrire() {
+        return `${this.name}, the ${this.title} | PV: ${this.PV} | strength: ${this.strength}`;
+    };
+
+    afficherConsole() {
+        console.log(" ");
+        console.log("--- Fiche Personnage ---");
+        console.log(this.decrire());
+    };
+};
+// * --------------------------------------GANDALF---------------------------------------------
+class Mage extends Character {
+    constructor(name, title, strength, PV, mana) {
+        super(name, title, strength, PV);
+        this.mana = mana;
+    };
+    decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
+        return `${super.decrire()} | Mana: ${this.mana}`;
+    };
+};
+
+const gandalf = new Mage('Gandalf', 'Grey Magicien', 40, 150, 300);
+gandalf.afficherConsole();
+// * --------------------------------------CONAN---------------------------------------------
+class Barbarian extends Character {
+    constructor(name, title, strength, PV, shield) {
+        super(name, title, strength, PV);
+        this.shield = shield;
+    };
+    decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
+        return `${super.decrire()} | Shield: ${this.shield}`;
+    };
+};
+
+const conan = new Barbarian('Conan', 'Barbarian', 300, 300, -100);
+conan.afficherConsole();
+// * --------------------------------------OPTIMUS PRIME--------------------------------------------
+class Autobots extends Character {
+    constructor(name, title, strength, PV, diesel) {
+        super(name, title, strength, PV);
+        this.diesel = diesel;
+    };
+    decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
+        return `${super.decrire()} | Diesel: ${this.diesel}`;
+    };
+};
+
+const optimus = new Autobots('Optimus Prime', 'Autobot', 300, 300, '1,63€/l');
+optimus.afficherConsole();
+// * ------------------------------------CAPTAIN JACK SPARROW-----------------------------------------
+class Pirate extends Character {
+    constructor(name, title, strength, PV, state) {
+        super(name, title, strength, PV);
+        this.state = state;
+    };
+    decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
+        return `${super.decrire()} | State: ${this.state}`;
+    };
+};
+
+const jack = new Pirate('Captain Jack Sparrow', 'Pirate', 100, 150, 'Drunk');
+jack.afficherConsole();
