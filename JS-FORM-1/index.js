@@ -134,21 +134,21 @@
 
 
    //* ------------------------------HORLOGE FONCTIONNELLE--------------------------------------
-// function clock() {
-//    const clockSystem = new Date();
-//    let h = clockSystem.getHours();
-//    let m = clockSystem.getMinutes();
-//    let s = clockSystem.getSeconds();
+function clock() {
+   const clockSystem = new Date();
+   let h = clockSystem.getHours();
+   let m = clockSystem.getMinutes();
+   let s = clockSystem.getSeconds();
 
-//    h = h<10 ? '0' + h : h;
-//    m = m<10 ? '0' + m : m;
-//    s = s<10 ? '0' + s : s;
+   h = h<10 ? '0' + h : h;
+   m = m<10 ? '0' + m : m;
+   s = s<10 ? '0' + s : s;
 
-//    const time = h + ' : ' + m + ' : ' + s;
-//    document.getElementById('clockID').innerHTML = time;
-// }
-// setInterval(clock, 1000);
-// clock();
+   const time = h + ' : ' + m + ' : ' + s;
+   document.getElementById('clockID').innerHTML = time;
+}
+setInterval(clock, 1000);
+clock();
    //* ----------------------------------FIN HORLOGE--------------------------------------------
    //* ---------------------------------NBR PAIR IMPAIR-----------------------------------------
 // function pairImpair(nbr) {
@@ -295,74 +295,118 @@
 // myWisard.result();
 
 // *----------------------------------------4 PERSONNAGES-----------------------------------------------
-class Character {
-    constructor(name, title, strength, PV) {
-        this.name = name;
-        this.title = title;
-        this.PV = PV;
-        this.strength = strength;
-    };
+// class Character {
+//     constructor(name, title, strength, PV) {
+//         this.name = name;
+//         this.title = title;
+//         this.PV = PV;
+//         this.strength = strength;
+//     };
 
-    // Méthode commune à tous les personnages
-    decrire() {
-        return `${this.name}, the ${this.title} | PV: ${this.PV} | strength: ${this.strength}`;
-    };
+//     // Méthode commune à tous les personnages
+//     decrire() {
+//         return `${this.name}, The ${this.title} | PV: ${this.PV} | Strength: ${this.strength}`;
+//     };
 
-    afficherConsole() {
-        console.log(" ");
-        console.log("--- Fiche Personnage ---");
-        console.log(this.decrire());
-    };
-};
-// * --------------------------------------GANDALF---------------------------------------------
-class Mage extends Character {
-    constructor(name, title, strength, PV, mana) {
-        super(name, title, strength, PV);
-        this.mana = mana;
-    };
-    decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
-        return `${super.decrire()} | Mana: ${this.mana}`;
-    };
-};
+//     afficherConsole() {
+//         console.log(' ');
+//         console.log('--- Fiche Personnage ---');
+//         console.log(this.decrire());
+//     };
+// };
+// // * --------------------------------------GANDALF---------------------------------------------
+// class Mage extends Character {
+//     constructor(name, title, strength, PV, mana) {
+//         super(name, title, strength, PV);
+//         this.mana = mana;
+//     };
+//     decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
+//         return `${super.decrire()} | Mana: ${this.mana}`;
+//     };
+// };
 
-const gandalf = new Mage('Gandalf', 'Grey Magicien', 40, 150, 300);
-gandalf.afficherConsole();
-// * --------------------------------------CONAN---------------------------------------------
-class Barbarian extends Character {
-    constructor(name, title, strength, PV, shield) {
-        super(name, title, strength, PV);
-        this.shield = shield;
-    };
-    decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
-        return `${super.decrire()} | Shield: ${this.shield}`;
-    };
-};
+// const gandalf = new Mage('Gandalf', 'Grey Magicien', 40, 150, 300);
+// gandalf.afficherConsole();
+// // * --------------------------------------CONAN---------------------------------------------
+// class Barbarian extends Character {
+//     constructor(name, title, strength, PV, shield) {
+//         super(name, title, strength, PV);
+//         this.shield = shield;
+//     };
+//     decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
+//         return `${super.decrire()} | Shield: ${this.shield}`;
+//     };
+// };
 
-const conan = new Barbarian('Conan', 'Barbarian', 300, 300, -100);
-conan.afficherConsole();
-// * --------------------------------------OPTIMUS PRIME--------------------------------------------
-class Autobots extends Character {
-    constructor(name, title, strength, PV, diesel) {
-        super(name, title, strength, PV);
-        this.diesel = diesel;
-    };
-    decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
-        return `${super.decrire()} | Diesel: ${this.diesel}`;
-    };
-};
+// const conan = new Barbarian('Conan', 'Barbarian', 300, 300, -100);
+// conan.afficherConsole();
+// // * --------------------------------------OPTIMUS PRIME--------------------------------------------
+// class Autobots extends Character {
+//     constructor(name, title, strength, PV, diesel) {
+//         super(name, title, strength, PV);
+//         this.diesel = diesel;
+//     };
+//     decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
+//         return `${super.decrire()} | Diesel: ${this.diesel}`;
+//     };
+// };
 
-const optimus = new Autobots('Optimus Prime', 'Autobot', 300, 300, '1,63€/l');
-optimus.afficherConsole();
-// * ------------------------------------CAPTAIN JACK SPARROW-----------------------------------------
-class Pirate extends Character {
-    constructor(name, title, strength, PV, state) {
-        super(name, title, strength, PV);
-        this.state = state;
-    };
-    decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
-        return `${super.decrire()} | State: ${this.state}`;
-    };
-};
+// const optimus = new Autobots('Optimus Prime', 'Autobot', 300, 300, '1,63€/l');
+// optimus.afficherConsole();
+// // * ------------------------------------CAPTAIN JACK SPARROW-----------------------------------------
+// class Pirate extends Character {
+//     constructor(name, title, strength, PV, situation) {
+//         super(name, title, strength, PV);
+//         this.situation = situation;
+//     };
+//     decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
+//         return `${super.decrire()} | Situation : ${this.situation}`;
+//     };
+// };
 
-const jack = new Pirate('Captain Jack Sparrow', 'Pirate', 100, 150, 'Drunk');
-jack.afficherConsole();
+// const jack = new Pirate('Captain Jack Sparrow', 'Pirate', 100, 150, 'lost his ship');
+// jack.afficherConsole();
+// // * ------------------------------------ASTERIX ET OBELIX-----------------------------------------
+// class Gaulois extends Character {
+//     constructor(name, title, strength, PV, condition) {
+//         super(name, title, strength, PV);
+//         this.condition = condition;
+//     };
+//     decrire() { // super.decrire pour aller chercher ma description dans le constructor parent et ajouter mana
+//         return `${super.decrire()} | Condition: ${this.condition}`;
+//     };
+// };
+
+// const asterixEtObelix = new Gaulois('Astérix et Obélix', 'Gauls', 300, 300, 'Potion adict');
+// asterixEtObelix.afficherConsole();
+
+
+// * -------------------------------------------Les ternaires-----------------------------------------------
+// * --1--
+// let old = 18;
+// let message = old >=18 ? 'Tu es majeur' : 'Tu es mineur';
+// console.log(message);
+// * --2--
+// let question = prompt('Quelle age avez vous ?');
+// question ? alert(`Bonjour ${question}`) : alert('Aucun prénom saisis');
+// * --3--
+// let pairImpair = prompt('Saisisez un nombre :')
+// pairImpair % 2 === 0 ? alert('Nombre pair') : alert('Nombre impair');
+// * --4--
+// let note = prompt('Indiquez une note entre 0 et 20 :');
+// note >= 16 ? alert('Exellent') : note >= 12 ? alert('Bien') : note >= 10 ? alert('Moyen') : alert('Insuffisant');
+// * --5--
+// let tableau = [-5, 12, 0, -3, 8, 0, -1];
+// const signes = tableau.map(n => 
+//     n > 0 ? '+' : n < 0 ? '-' : '0');
+// console.log(signes);
+// * --6--
+// let tableau = [5, 12, 8, 31, 13, 7, 70];
+
+// const pairImpair = tableau.filter((tableau) => tableau % 2 === 0);
+// console.log(pairImpair);
+// * --7--
+let tableau = ['constantinople', 'canard', 'lion', 'eau', 'ornithorynque'];
+
+const five = tableau.filter(function(tableau) => tableau mot.lenght === 6);
+console.log(five);
