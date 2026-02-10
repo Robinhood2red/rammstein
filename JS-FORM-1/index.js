@@ -403,10 +403,45 @@ clock();
 // * --6--
 // let tableau = [5, 12, 8, 31, 13, 7, 70];
 
-// const pairImpair = tableau.filter((tableau) => tableau % 2 === 0);
+// const pairImpair = tableau.filter((nombre) => (nombre % 2 === 0 ? true : false));
 // console.log(pairImpair);
 // * --7--
-let tableau = ['constantinople', 'canard', 'lion', 'eau', 'ornithorynque'];
+// let mots = ['constantinople', 'chien', 'chat', 'arbre', 'ordinateur', 'table'];
+// const five = mots.filter(mot => mot.length === 5 ? true : false);
 
-const five = tableau.filter(function(tableau) => tableau mot.lenght === 6);
-console.log(five);
+// console.log(five);
+// * --8--
+// let personnes = [
+//     { nom: "Alice", age: 22 },
+//     { nom: "Bob", age: 17 },
+//     { nom: "Charlie", age: 30 }
+// ];
+
+// const adultes = personnes.filter(personne => personne.age >= 18 ? true : false);
+// console.log(adultes);
+// * --9--
+// let tableau = [9, 7, 12, 22, 68, 3];
+
+// const calcul = tableau.reduce((accumulator, currentValue) => 
+//   currentValue % 2 === 0 ? accumulator + currentValue : accumulator, 0
+// );
+// console.log(calcul);
+// * --10--
+// let tableau = [9, 7, 12, 22, 68, 3];
+
+// const calcul = tableau.reduce((accumulator, currentValue) => 
+//   currentValue % 2 !== 0 ? accumulator * currentValue : accumulator
+// );
+// console.log(calcul);
+// * --11--
+let word = prompt('Veuillez écrire un mot au choix :').toLowerCase();
+let voyelles = 'aeiouy';
+
+// split('') pour transformer word en tableau de lettres
+const numbreVoyelles = word.split('').reduce((total, letter) => { // .reduce pour parcourir chaque éléments
+  // if la lettre actuelle est présente dans la chaîne "voyelles"
+  // Structure : (condition) ? (if voyelle + 1) : (sinon total)
+  return voyelles.includes(letter) ? total + 1 : total;
+}, 0);
+
+console.log(`Il y a ${numbreVoyelles} voyelles dans '${word}'.`);
